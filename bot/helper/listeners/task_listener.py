@@ -375,9 +375,8 @@ class TaskListener(TaskConfig):
         ):
             await database.rm_complete_task(self.message.link)
         msg = f"<b>Name: </b><code>{escape(self.name)}</code>\n\n<b>Size: </b>{get_readable_file_size(self.size)}"
-        done_msg = (
-            f"{self.tag}\nYour task is complete {url}\nPlease check your inbox."
-        )
+        done_msg = f"{self.tag}\nYour task is completep\nPlease check your inbox."
+        link = f"<a href='{log_msg.link}'>{escape(name)}</a>"
         LOGGER.info(f"Task Done: {self.name}")
         if self.is_leech:
             msg += f"\n<b>Total Files: </b>{folders}"
